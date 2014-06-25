@@ -1,2 +1,4 @@
 CodeTemplate
 ============
+
+Simple templates
