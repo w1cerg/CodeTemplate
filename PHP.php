@@ -12,7 +12,7 @@ ini_set('display_startup_errors',1);
 
 function script_end($error = false, $die = false){
 
-	global $log, $file_log;
+	global $log, $file_log, $debug;
 	
 	//Подключаем библиотеку для логов
 	require '../include/KLogger.php'; //https://github.com/katzgrau/KLogger
