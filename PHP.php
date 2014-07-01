@@ -10,7 +10,7 @@ ini_set('display_startup_errors',1);
 # Функция для логирования скрипта
 #
 
-function script_end($error = false, $die = false){
+function script_end($die = false, $error = false){
 
 	global $log, $file_log, $debug;
 	
