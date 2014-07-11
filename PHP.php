@@ -5,12 +5,13 @@
 header('Content-Type: text/html; charset=utf-8');
 ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
+error_reporting(-1);
 
 #
 # Функция для логирования скрипта
 #
 
-function script_end($die = false, $error = false){
+function script_end($error = false, $die = true){
 
 	global $log, $file_log, $debug;
 	
