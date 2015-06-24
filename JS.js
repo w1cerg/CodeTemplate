@@ -78,6 +78,8 @@ $.preloadImages = function () {
         var images = arguments;
         var n = images.length - 1;
     }
+    if( n == 0 )
+        callback();
     var not_loaded = n;
     for (var i = 0; i < n; i++) {
         jQuery(new Image()).attr('src', images[i]).load(function() {
