@@ -41,3 +41,18 @@ foreach ($arResult["ERRORS"] as $key => $error){
 	$arResult["ERRORS"][$key] = $error;
 	// ..
 }
+
+/*
+ * Редирект с сохранением параметров
+ */
+use Bitrix\Main\Web\Uri;
+use \Bitrix\Main\Application;
+
+$request = Application::getInstance()
+    ->getContext()
+    ->getRequest();
+
+$uri = new Uri("/new_link/");
+$uri->addParams($request->getQueryList()->toArray());
+$uri->deleteParams(array("id_product", "ID_PRODUCT"));
+LocalRedirect($uri->getUri(), false, 301);
