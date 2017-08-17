@@ -1,3 +1,4 @@
+<?php
 /*
  * Получить значения для списка пользовательского поля
  */
@@ -46,7 +47,7 @@ foreach ($arResult["ERRORS"] as $key => $error){
  * Редирект с сохранением параметров
  */
 use Bitrix\Main\Web\Uri;
-use \Bitrix\Main\Application;
+use Bitrix\Main\Application;
 
 $request = Application::getInstance()
     ->getContext()
