@@ -57,3 +57,11 @@ $uri = new Uri("/new_link/");
 $uri->addParams($request->getQueryList()->toArray());
 $uri->deleteParams(array("id_product", "ID_PRODUCT"));
 LocalRedirect($uri->getUri(), false, 301);
+
+/*
+ * Укороченая запись для обращения к REQUEST параметрам
+ */
+use Bitrix\Main\Context;
+
+$request = Context::getCurrent()->getRequest();
+$action = $request->get('action');
