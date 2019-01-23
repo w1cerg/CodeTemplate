@@ -65,3 +65,18 @@ use Bitrix\Main\Context;
 
 $request = Context::getCurrent()->getRequest();
 $action = $request->get('action');
+
+// добавление фильтра на входящий запрос
+$request->addFilter(new Web\PostDecodeFilter);
+
+/*
+ * Работа с выводом на экран
+ */
+use Bitrix\Main\Web;
+
+$response = new \Bitrix\Main\HttpResponse(\Bitrix\Main\Application::getInstance()->getContext());
+$response->addHeader("Content-Type", "application/json");
+$response->flush(Web\Json::encode(array(
+	"error" => "Request is not XHR"
+)));
+die();
